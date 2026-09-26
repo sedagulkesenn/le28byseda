@@ -1155,115 +1155,426 @@ a {
   font-size: 12px;
 }
 
-/* =========================================
+/* =====================================
+   CONTACT / LET'S CREATE
+====================================== */
 
-   CTA
-
-========================================= */
-
-.cta {
-  min-height: 650px;
-
-  padding: 110px 5vw;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 50px;
-
+.contact-editorial {
+  position: relative;
+  overflow: hidden;
   background: #241d19;
-
-  color: #f3f0eb;
+  color: #f5f1ec;
+  padding: 115px 5vw 42px;
 }
 
-.cta > div > span {
-  color: #b7a397;
+.contact-inner {
+  position: relative;
+  max-width: 1600px;
+  min-height: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.cta h2 {
-  margin: 35px 0 0;
 
-  font-size: clamp(4.5rem, 8vw, 9rem);
+/* TOP LINE */
 
-  line-height: 0.82;
+.contact-topline {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 42px;
 
-  letter-spacing: -0.065em;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #b8a79b;
+}
 
+
+/* MAIN */
+
+.contact-main {
+  position: relative;
+  flex: 1;
+  min-height: 510px;
+}
+
+
+/* HEADLINE */
+
+.contact-copy {
+  position: relative;
+  z-index: 3;
+}
+
+.contact-title {
+  margin: 0;
+  max-width: 1120px;
+
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(4.5rem, 7.5vw, 8.8rem);
+  line-height: .78;
+  letter-spacing: -.075em;
   font-weight: 500;
 }
 
-.cta h2 em {
+.contact-title span {
+  display: block;
+}
+
+.contact-title-last {
+  white-space: nowrap;
+}
+
+.contact-title em {
   font-family: "Cormorant Garamond", serif;
-
-  font-style: italic;
-
+  font-size: 1.08em;
   font-weight: 400;
-}
-
-.cta-sub-message {
-  margin-top: 45px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
   font-style: italic;
-  color: #b7a397;
+  letter-spacing: -.045em;
+  color: #f5f1ec;
 }
 
-/* -----------------------------------------
 
-   CIRCLE CONTACT BUTTON
+/* INTRO */
 
------------------------------------------ */
+.contact-intro {
+  max-width: 650px;
+  margin: 58px 0 0;
 
-.circle-button {
-  width: 170px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  line-height: 1.2;
+  font-style: italic;
+  color: #b8a79b;
+}
 
-  height: 170px;
 
-  flex: 0 0 auto;
+/* =====================================
+   FLOATING PHOTO
+====================================== */
 
-  display: flex;
+.contact-photo {
+  position: absolute;
+  z-index: 2;
 
-  flex-direction: column;
+  top: 75px;
+  right: 11%;
 
-  align-items: center;
+  width: 235px;
+  height: 315px;
 
-  justify-content: center;
+  overflow: hidden;
 
-  gap: 12px;
+  transform: rotate(4deg);
 
-  border: 1px solid rgba(243, 240, 235, 0.45);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, .35);
 
+  transition:
+    transform .6s cubic-bezier(.2, .7, .2, 1),
+    box-shadow .6s ease;
+}
+
+.contact-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(25, 18, 14, .55)
+    );
+
+  pointer-events: none;
+}
+
+.contact-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+
+  transition:
+    transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.contact-photo:hover {
+  transform: rotate(0deg) translateY(-8px);
+
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, .45);
+}
+
+.contact-photo:hover img {
+  transform: scale(1.05);
+}
+
+
+/* PHOTO LABEL */
+
+.contact-photo-label {
+  position: absolute;
+  z-index: 3;
+
+  left: 15px;
+  bottom: 14px;
+
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: #f5f1ec;
+}
+
+
+/* =====================================
+   CTA
+====================================== */
+
+.contact-cta {
+  position: absolute;
+  z-index: 5;
+
+  right: 3%;
+  bottom: 25px;
+
+  width: 150px;
+  height: 150px;
+
+  border: 1px solid rgba(245, 241, 236, .45);
   border-radius: 50%;
 
-  color: #f3f0eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
+  color: #f5f1ec;
   text-decoration: none;
+
+  transition:
+    background .4s ease,
+    color .4s ease,
+    transform .5s cubic-bezier(.2, .7, .2, 1),
+    border-color .4s ease;
+}
+
+.contact-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   font-size: 13px;
 
-  letter-spacing: 0.1em;
-
-  text-align: center;
-
   transition:
-    background 0.4s ease,
-    color 0.4s ease,
-    transform 0.4s ease;
+    transform .4s cubic-bezier(.2, .7, .2, 1);
 }
 
-.circle-button i {
-  font-size: 17px;
+.contact-cta-text {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.circle-button:hover {
-  background: #f3f0eb;
-
+.contact-cta:hover {
+  background: #f5f1ec;
   color: #241d19;
+  border-color: #f5f1ec;
+  transform: scale(1.08);
+}
 
-  transform: rotate(-5deg);
+.contact-cta:hover .contact-cta-icon {
+  transform: translateX(5px);
+}
+
+
+/* =====================================
+   BOTTOM LINE
+====================================== */
+
+.contact-bottom {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 28px;
+  margin-top: 40px;
+
+  border-top: 1px solid rgba(245, 241, 236, .16);
+
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: #8f8178;
+}
+
+
+/* =====================================
+   TABLET
+====================================== */
+
+@media (max-width: 1100px) {
+
+  .contact-title {
+    font-size: clamp(4rem, 8vw, 7rem);
+  }
+
+  .contact-photo {
+    right: 5%;
+    width: 210px;
+    height: 285px;
+  }
+
+  .contact-cta {
+    right: 0;
+  }
+
+}
+
+
+/* =====================================
+   MOBILE
+====================================== */
+
+@media (max-width: 900px) {
+
+  .contact-editorial {
+    padding: 80px 6vw 30px;
+  }
+
+  .contact-inner {
+    min-height: auto;
+  }
+
+  .contact-topline {
+    margin-bottom: 35px;
+  }
+
+  .contact-main {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-title {
+    font-size: clamp(3.3rem, 14vw, 6rem);
+    line-height: .82;
+  }
+
+  .contact-title-last {
+    white-space: normal;
+  }
+
+  .contact-intro {
+    max-width: 480px;
+    margin-top: 35px;
+    font-size: 21px;
+  }
+
+
+  /* PHOTO */
+
+  .contact-photo {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: 190px;
+    height: 250px;
+
+    margin: 55px 0 0 auto;
+
+    transform: rotate(3deg);
+  }
+
+
+  /* CTA */
+
+  .contact-cta {
+    position: absolute;
+
+    right: 8%;
+    bottom: 30px;
+
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-cta-text {
+    font-size: 9px;
+  }
+
+
+  /* BOTTOM */
+
+  .contact-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 55px;
+  }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+  .contact-editorial {
+    padding: 65px 6vw 25px;
+  }
+
+  .contact-title {
+    font-size: 13.5vw;
+    letter-spacing: -.07em;
+  }
+
+  .contact-intro {
+    font-size: 19px;
+  }
+
+  .contact-photo {
+    width: 165px;
+    height: 220px;
+    margin-top: 45px;
+  }
+
+  .contact-cta {
+    width: 105px;
+    height: 105px;
+    right: 3%;
+    bottom: 25px;
+  }
+
+  .contact-bottom {
+    font-size: 8px;
+  }
+
 }
 
 /* =========================================
