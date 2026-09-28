@@ -1072,6 +1072,49 @@ a {
   transform: translate(4px, -4px);
 }
 
+
+/* =====================================
+   PROJECTS — MOBILE FIX
+   ONE PROJECT PER ROW
+====================================== */
+
+@media (max-width: 900px) {
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 70px;
+    width: 100%;
+  }
+
+  .project,
+  .project-featured {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0;
+  }
+
+  .project-image,
+  .project-featured .project-image {
+    width: 100%;
+    min-height: 560px;
+    aspect-ratio: auto;
+  }
+
+  .phone-mockup {
+    width: 235px;
+    height: 485px;
+  }
+
+  .project-meta {
+    width: 100%;
+    grid-template-columns: 28px 1fr auto;
+    gap: 12px;
+    padding-top: 17px;
+  }
+
+}
+
 /* -----------------------------------------
 
    WORK FOOTER NOTE
