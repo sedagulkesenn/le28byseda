@@ -1184,7 +1184,10 @@ a {
   .project:nth-child(2),
   .project:nth-child(3),
   .project:nth-child(4),
-  .project:nth-child(5) {
+  .project:nth-child(5),
+  .project:nth-child(6),
+  .project:nth-child(7),
+  .project:nth-child(8) {
     grid-column: 1;
 
     width: 100%;
