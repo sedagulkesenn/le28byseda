@@ -1,11 +1,13 @@
-# Seda Gulkesen — one-page portfolio
+# Seda — one-page portfolio
 
 A lightweight HTML/CSS/JS portfolio inspired by the uploaded PDF.
 
 ## Run locally
+
 Open `index.html` in a browser, or use VS Code Live Server.
 
 ## Customize
+
 - Replace images in `assets/`
 - Edit text in `index.html`
 - Adjust colors/type/spacing in `styles.css`
