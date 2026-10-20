@@ -1348,15 +1348,12 @@ a {
 ====================================== */
 
 .editorial-images {
-
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-
   width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
 }
 
 
@@ -2999,13 +2996,12 @@ footer i {
 
 .brand-item img {
   display: block;
-  width: auto;
-  max-width: 125px;
-  height: 34px;
-
+  width: 130px;
+  height: 42px;
+  max-width: 100%;
+  flex: 0 0 42px;
   object-fit: contain;
   object-position: center;
-
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
@@ -3056,8 +3052,9 @@ footer i {
   }
 
   .brand-item img {
-    max-width: 115px;
-    height: 32px;
+    width: 130px;
+    height: 42px;
+    flex-basis: 42px;
   }
 }
 
@@ -3108,8 +3105,9 @@ footer i {
   }
 
   .brand-item img {
-    max-width: 105px;
-    height: 29px;
+    width: 120px;
+    height: 36px;
+    flex-basis: 36px;
   }
 
   .brand-item span {
